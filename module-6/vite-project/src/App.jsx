@@ -1,9 +1,21 @@
 import React, {Component, Fragment} from 'react';
+import Clock from "./components/Clock.jsx";
+
 
 class App extends Component {
     render() {
         // let a = 70;
         let a = ['a', 'b', 'c', 'd', 'e',];
+
+        let b = ['a', 'b', 'f', "e"];
+        const handleClick = (text) => {
+            console.log(text)
+        }
+
+        const submitButton = (e, text) => {
+            e.preventDefault();
+            console.log(text)
+        }
         return (
             /*<Fragment>
                 {
@@ -27,7 +39,7 @@ class App extends Component {
                 }
             </Fragment>*/
 
-            <Fragment>
+            /*<Fragment>
 
                 <ol>
                     {
@@ -38,6 +50,22 @@ class App extends Component {
                 </ol>
 
 
+            </Fragment>*/
+
+            /*<Fragment>
+                <h1>{new Date().toLocaleString()}</h1>
+            </Fragment>*/
+
+            <Fragment>
+                <Clock locale="bn-BD"></Clock>
+                <button onClick={() => handleClick('Hello Word')}>Click Me</button>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <form onSubmit={(e) => submitButton(e, "working...........")}>
+                    <button type="submit" className="btn btn-primary">On Submit</button>
+                </form>
             </Fragment>
         );
     }
