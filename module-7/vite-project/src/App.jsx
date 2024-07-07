@@ -1,4 +1,6 @@
 import React, {useRef} from 'react';
+import Counter from "./components/Counter.jsx";
+import Form from "./components/Form.jsx";
 
 const App = () => {
     const ref = useRef(0);
@@ -31,6 +33,10 @@ const App = () => {
 
         <button className='btn btn-secondary' onClick={() => callApi()}>Call APi</button>
         <button className='btn btn-info' onClick={() => showData()}>Show Data</button>
+
+
+        <Counter/>
+        <Form/>
     </div>);
 }
 
